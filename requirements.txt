@@ -1,0 +1,24 @@
+# --- core ---
+numpy>=1.24,<2.0
+scipy>=1.11
+pyyaml>=6.0
+omegaconf>=2.3
+tqdm>=4.66
+
+# --- capture / S0 ---
+opencv-python>=4.9
+mediapipe>=0.10.14
+
+# --- geometry / S1 (CPU) ---
+trimesh>=4.4
+networkx>=3.2
+
+# --- models / training (imported locally, executed on Colab) ---
+torch>=2.2
+torchvision>=0.17
+lpips>=0.1.4
+pytorch3d>=0.7.6      # Colab only; local import will be guarded
+
+# --- dev ---
+pytest>=8.0
+rich>=13.7

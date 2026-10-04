@@ -1,0 +1,64 @@
+capture:
+  face_oval_min_px: 450      # §0 change #1
+  face_oval_floor_px: 320
+  blur_reject_ratio: 0.5     # §5.1: frames < 50% of session-median LoG
+  color_gain_warn: 0.05
+  color_gain_warn_frac: 0.05
+  tracker_conf_min: 0.9
+  store_native_all: false      # if true, native crops stored for every kept frame
+  native_pool_size: 1024       # FPS-sampled training frames for native crops
+
+splits:
+  block_seconds: 10
+  guard_seconds: 1
+  val_blocks: 3              # talking / emotive / pose-sweep
+  test_blocks: 3
+
+crop:
+  side_factor: 1.6
+
+bank:
+  N: 96
+  K: 3
+  hold_out_window_frames: 90
+  quota_jaw_open: 8
+  quota_yaw_each_side: 6
+  quota_blink: 6
+  quota_wide: 4
+
+slots:
+  hysteresis: 0.15
+  dwell: 8
+  crossfade: 6
+
+retrieval:
+  lambda_pose: 0.7
+  pose_scale_deg: 6.0
+
+cond:
+  noise_sigma: 0.02
+
+nt:
+  channels: 16
+  face_res: 512
+  proxy_res: 256
+
+texel_dropout:
+  p: 0.5
+  fraction: 0.15
+
+support:
+  k: 5
+  lambda_max: 0.6
+  tau_hi_factor: 3.0
+
+envelope:
+  enable: true
+  soft_start: 0.8
+
+session:
+  selected: 0
+
+precision: fp16
+
+seed: 1234

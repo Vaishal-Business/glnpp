@@ -1,0 +1,20 @@
+# Copy to configs/subject.yaml and edit.
+subject_id: demo
+workdir: /data/galnp_s/demo          # everything for this subject goes here
+tracker_model: /data/models/face_landmarker.task
+
+sessions:
+  - id: 0
+    video: /data/recordings/session0.mp4
+    # Named time ranges (seconds). Everything is optional except plate.
+    segments:
+      plate_start:   [0,    10]
+      neutral_hold:  [10,   20]
+      neutral_live:  [20,   30]
+      au_sweep:      [30,  130]
+      speech:        [130, 260]
+      emotive:       [260, 320]
+      pose_sweep:    [320, 390]
+      combos:        [390, 420]
+      plate_end:     [420, 430]
+    fps: 30
